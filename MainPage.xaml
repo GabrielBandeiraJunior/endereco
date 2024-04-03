@@ -1,0 +1,16 @@
+xmlns:Maps=”using:WIndows.UI.Xaml.Controls.Maps”
+01 <StackPanel>
+02     <Maps:MapControl Name="MapControl1" Height="240" MapServiceToken="Insert your Key here" MapTapped="MapControl1_MapTapped"/>
+03     <TextBlock Name="latitude"></TextBlock>
+04     <TextBlock Name="longitude"></TextBlock>
+05 </StackPanel>
+01  private void MapControl1_MapTapped(Windows.UI.Xaml.Controls.Maps.MapControl sender, Windows.UI.Xaml.Controls.Maps.MapInputEventArgs args)
+02 {
+03            var tappedGeoposition = args.Location.Position;
+04            latitude.Text = "Latitude: " + tappedGeoposition.Latitude.ToString();
+05            longitude.Text = "Longitude:" + tappedGeoposition.Longitude.ToString();
+06            altitude.Text = "Altitude: " + tappedGeoposition.Altitude.ToString();
+07 }
+01 Windows.UI.Xaml.Controls.Maps.MapIcon icon = new Windows.UI.Xaml.Controls.Maps.MapIcon();
+02 icon.Location = new Windows.Devices.Geolocation.Geopoint(tappedGeoposition);
+03 MapControl1.MapElements.Add(icon);
