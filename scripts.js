@@ -1,3 +1,5 @@
+document.getElementById("btnConsultar").addEventListener("click", obterEnderecoPorCEP);
+
 function obterEnderecoPorCEP() {
     const cep = document.getElementById("cep").value;
     fetch(`https://viacep.com.br/ws/${cep}/json/`)
@@ -17,13 +19,9 @@ function obterEnderecoPorCEP() {
 }
 
 function exibirEndereco(endereco) {
-    const resultadoDiv = document.getElementById("enderecoResultado");
-    resultadoDiv.innerHTML =
-        <h2>Endereço Encontrado</h2>=getElementById("enderecoencontrado")
-        <p><strong>Rua:</strong> ${endereco.logradouro}</p>=getElementById("rua")
-        <p><strong>Cidade:</strong> ${endereco.localidade}</p>=getElementById("cidade")
-        <p><strong>Estado:</strong> ${endereco.uf}</p>=getElementById("estado")
-    ;
+    document.getElementById("rua").textContent = endereco.logradouro || '';
+    document.getElementById("cidade").textContent = endereco.localidade || '';
+    document.getElementById("estado").textContent = endereco.uf || '';
 }
 
 function exibirErro(mensagem) {

@@ -8,17 +8,14 @@
     <h1>Consulta de Endereço por CEP</h1>
     <label for="cep">CEP:</label>
     <input type="text" id="cep">
-    <button onclick="obterEnderecoPorCEP()">Consultar</button>
+    <button id="btnConsultar">Consultar</button>
 
     <div id="enderecoResultado">
-      <p id="enderecoencontrado"></p>
-      <p id="rua"></p>
-      <p id="cidade"></p>
-      <p id="estado"></p>
-
-
+        <p><strong>Rua:</strong> <span id="rua"></span></p>
+        <p><strong>Cidade:</strong> <span id="cidade"></span></p>
+        <p><strong>Estado:</strong> <span id="estado"></span></p>
     </div>
 
-    <script src="scripts.js"></script>
+    <script src="./scripts.js"></script>
 </body>
 </html>
